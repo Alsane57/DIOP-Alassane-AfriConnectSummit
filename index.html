@@ -4,27 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AfriConnect-Summit</title>
-    <!-- les links -->
+    <!-- les links  css-->
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <!-- Fonts Google --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:opsz@18..144&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Font Awesome --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <nav>
+    <header class="header">
+        <nav class="nav">
             <!-- Navigation links -->
+            <div class="logo">Afri <span> connect</span><span>2026</span></div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                    <li><a href="programme.html" class="nav-link">Programme</a></li>
+                    <li><a href="intervenants.html" class="nav-link">Intervenants</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div>
+                    <button>
+                        <a href="inscription.html">Inscription</a>
+                    </button>
+                </div>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </nav>
     </header>
     <!-- Main content -->
     <main>
         <!-- Hero section -->
         <section id="hero">
-            <h1>AfriConnect Summit</h1>
-        </section>      
+            <h1>Le futur de la Tech Afreicaine se dessine ici</h1>
+            <p>25-30 janvier 2027 | Dakar, Senegal</p>
+            <div id="countdown">Temps restant : 00j 00h 00m 00s</div>
+            <a href="contact.html" class="bnt">S'inscrire</a>
+        </section> 
+          <!--Stats section  -->
+        <section id="chiffres-cles">
+            <article class="chiffre-item">
+                <h2 class="counter">+1200</h2>
+                <p>Participants</p>
+            </article>
+            <article class="chiffre-item">
+                <h2 class="counter">+48</h2>
+                <p>intervenants</p>
+            </article>
+            <article class="chiffre-item">
+                <h2 class="counter">+48</h2>
+                <p>intervenants</p>
+            </article>
+            <article class="chiffre-item">
+                <h2 class="counter">+48</h2>
+                <p>intervenants</p>
+            </article>
+            <!-- Répétez pour les autres stats -->
+        </section>
+        <section id="pourquoi">
+            <div class="pourquoi-content">
+                <h2>Pourquoi participer à AfriConnect Summit ?</h2>
+                <div class="pourquoi-details1">
+                    <p>AfriConnect Summit est l'événement incontournable pour les professionnels de la tech en Afrique. Rejoignez-nous pour découvrir les dernières tendances, rencontrer des experts de l'industrie et élargir votre réseau.</p>
+                    <ul>
+                        <li>Conférences inspirantes</li>
+                        <li>Ateliers pratiques</li>
+                        <li>Opportunités de réseautage</li>
+                        <li>Exposition des startups innovantes</li>
+                    </ul>
+                </div>
+                <div class="pourquoi-details2">
+                    <p>Ne manquez pas cette occasion unique de vous connecter avec les leaders de l'industrie et de contribuer à façonner l'avenir de la technologie en Afrique.</p>
+                    <a href="contact.html" class="bnt">S'inscrire</a>
+                </div>
+                <div class="pourquoi-details3">
+                    <p>Rejoignez-nous pour une expérience inoubliable et des opportunités de croissance professionnelle.</p>
+                </div>
+            </div>
+        </section>
+        <section id="intervenants">
+            <h2>Témoignages</h2>
+            <div class="temoignages-container">
+                <div class="temoignage-item">
+                    <p>"AfriConnect Summit a été une expérience incroyable. J'ai appris tellement de choses et j'ai rencontré des personnes formidables."</p>
+                    <h4>- Jean Dupont, CEO de TechAfrique</h4>
+                </div>
+                <div class="temoignage-item">
+                    <p>"Les conférences étaient très instructives et les ateliers pratiques m'ont permis d'améliorer mes compétences."</p>
+                    <h4>- Amina Diallo, Développeuse Web</h4>
+                </div>
+                <div class="temoignage-item">
+                    <p>"Un événement bien organisé avec des intervenants de qualité. Je recommande vivement AfriConnect Summit."</p>
+                    <h4>- Mohamed Traoré, Entrepreneur</h4>
+                </div>
+            </div>
+        </section>
+        <section id="Sponsors">
+            <h2>Nos Partenaires</h2>
+            <div class="partenaires-container">
+                <div class="partenaire-item">
+                    <img src="images/partenaire1.png" alt="Partenaire 1">
+                </div>
+                <div class="partenaire-item">
+                    <img src="images/partenaire2.png" alt="Partenaire 2">
+                </div>
+                <div class="partenaire-item">
+                    <img src="images/partenaire3.png" alt="Partenaire 3">
+                </div>
+            </div>
+        </section>
     </main> 
     <!-- Footer -->
     <footer>
         <!-- Footer content -->
-         <p>&copy; 2023 AfriConnect Summit. All rights reserved.</p>
+        <div>
+            <ul>
+                <li><a href="#"><img src="images/facebook.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
+                <li><a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a></li>
+            </ul>
+        </div>
+        <p>&copy; 2023 AfriConnect Summit. All rights reserved.</p>
     </footer>
     <!-- links javascript -->
     <script src="js/main.js"></script>

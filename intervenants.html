@@ -6,24 +6,163 @@
     <title>Document</title>
     <!-- les links -->
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <!-- Fonts Google --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:opsz@18..144&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Font Awesome --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <nav>
+    <header class="header">
+        <nav class="nav">
             <!-- Navigation links -->
+            <div class="logo">Afri <span> connect</span><span>2026</span></div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                    <li><a href="programme.html" class="nav-link">Programme</a></li>
+                    <li><a href="intervenants.html" class="nav-link">Intervenants</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div>
+                    <button>
+                        <a href="inscription.html">Inscription</a>
+                    </button>
+                </div>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </nav>
     </header>
     <!-- Main content -->
     <main>
-        <!-- Hero section -->
+        <!-- HERO INTERNE - PAGE PROGRAMME -->
+        <section class="hero-programme">
+            <div class="container-hero">
+                <h1>Programme complet</h1>
+                <nav class="breadcrumb">
+                    <a href="index.html">Accueil</a> 
+                    <span class="separator">/</span> 
+                    <span class="current">Programme</span>
+                </nav>
+            </div>
+        </section>  
         <section>
+            <div class="speakers-grid">
+                <article class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="images/intervenant1.jpg" alt="Photo de l'intervenant">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Alassane Diop</h3>
+                        <p class="specialty">Expert en LLM</p>
+                        <p class="country">🇸🇳 Sénégal</p>
+                    </div>
+                </article>
+                <article class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="images/intervenant2.jpg" alt="Photo de l'intervenant">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Fatou Ndiaye</h3>
+                        <p class="specialty">Spécialiste en IA</p>
+                        <p class="country">🇸🇳 Sénégal</p>
+                    </div>
+                </article>
+                <article class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="images/intervenant3.jpg" alt="Photo de l'intervenant">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Cheikh Fall</h3>
+                        <p class="specialty">Développeur Full Stack</p>
+                        <p class="country">🇸🇳 Sénégal</p>
+                    </div>
+                </article>
+                <article class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="images/intervenant4.jpg" alt="Photo de l'intervenant">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Aminata Sarr</h3>
+                        <p class="specialty">Entrepreneure Tech</p>
+                        <p class="country">🇸🇳 Sénégal</p>
+                    </div>
+                </article>
+                <article class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="images/intervenant5.jpg" alt="Photo de l'intervenant">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Ousmane Ba</h3>
+                        <p class="specialty">Data Scientist</p>
+                        <p class="country">🇸🇳 Sénégal</p>
+                    </div>
+                </article>
+                <article class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="images/intervenant6.jpg" alt="Photo de l'intervenant">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Adama Diouf</h3>
+                        <p class="specialty">Consultant en Cybersécurité</p>
+                        <p class="country">🇸🇳 Sénégal</p>
+                    </div>
+                </article>
+                <article class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="images/intervenant7.jpg" alt="Photo de l'intervenant">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Marie Ndiaye</h3>
+                        <p class="specialty">Ingénieure Logiciel</p>
+                        <p class="country">🇸🇳 Sénégal</p>
+                    </div>
+                </article>
+                <article class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="images/intervenant8.jpg" alt="Photo de l'intervenant">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Cheikh Diop</h3>
+                        <p class="specialty">Expert en Blockchain</p>
+                        <p class="country">🇸🇳 Sénégal</p>
+                    </div>
+                </article>
+                <article class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="images/intervenant9.jpg" alt="Photo de l'intervenant">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Fatoumata Sow</h3>
+                        <p class="specialty">Consultante en Cloud Computing</p>
+                        <p class="country">🇸🇳 Sénégal</p>
+                    </div>  
+                </article>
+                
 
-        </section>      
+                <!-- ... autres intervenants ... -->
+            </div>
+       </section>
     </main> 
     <!-- Footer -->
     <footer>
         <!-- Footer content -->
+        <div>
+            <ul>
+                <li><a href="#"><img src="images/facebook.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
+                <li><a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a></li>
+            </ul>
+        </div>
          <p>&copy; 2023 AfriConnect Summit. All rights reserved.</p>
     </footer>
     <!-- links javascript -->
