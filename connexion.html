@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriConnect-Summit</title>
+    <!-- les links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!-- Fonts Google --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:opsz@18..144&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Font Awesome --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <!-- Navigation links -->
+            <div class="logo">Afri<span>connect</span></div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                    <li><a href="programme.html" class="nav-link">Programme</a></li>
+                    <li><a href="intervenants.html" class="nav-link">Intervenants</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <form class="search-navbar" role="search" action="/recherche" method="GET">
+                <div class="input-group">
+                    <span class="input-group-text bg-light text-muted border-end-0">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input class="form-control" type="search" placeholder="Rechercher..." aria-label="Rechercher" name="query">
+                </div>
+            </form>
+            <div class="nav-menu-1" id="nav-menu-1">
+                <div>
+                    <a href="inscription.html" class="btn-inscription">Inscription</a>
+                </div>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </div>
+            <!-- <button class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button> -->
+        </nav>
+    </header>
+    <main>
+        <section class="connexion-section">
+            <h1>Connexion</h1>
+            <p>Connectez-vous à votre compte pour accéder à nos services.</p>
+            <form id="contactForm">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Votre email">
+                    <span class="error-msg text-danger small" id="emailError"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="password" placeholder="Votre mot de passe">
+                    <span class="error-msg text-danger small" id="incorrect"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </form>
+        </section> 
+        <section class="options-section mt-5">
+            <div class="mb-4">
+                <h2>Mot de passe oublié ?</h2>
+                <p>Pas de panique, vous pouvez réinitialiser votre mot de passe en cliquant sur le lien ci-dessous.</p>
+                <a href="mots-de-pass.html" class="btn btn-link">Réinitialiser le mot de passe</a>
+            </div>
+            <div class=" mt-4">
+                <h2>Pas encore de compte ?</h2>
+                <p>Inscrivez-vous dès maintenant pour rejoindre notre communauté de freelances et clients.</p>
+                <a href="inscription.html" class="btn btn-secondary">S'inscrire</a>
+            </div>
+        </section>
+       
+    </main>
+   <!-- Footer -->
+    <footer>
+        <!-- div: Social media -->
+            <div class="social">
+                <h4>viellez-vous connecter sur nos réseaux sociaux</h4>
+            </div>
+        <!-- div: Social media -->
+        <div class="social-media">
+            <div class="container">
+                <div class="social-icones">
+                    <div class="fac"><a href="https://www.facebook.com"><img src="images/facboook.jpg" alt=""></a></div>
+                    <div class="insta"><a href="https://www.instagram.com"><img src="images/insta.png" alt="" ></a></div>
+                    <div class="twit"><a href="https://www.twitter.com"><img src="images/twitter.png" alt=""></a></div>                            
+                    <div class="link"><a href="https://www.linkedin.com"><img src="images/linkedin.png" alt=""></a></div>
+                    <div class="snap"><a href="https://www.snapchat.com"><img src="images/snap.png" alt=""></a></div>
+                    <div class="yt"><a href="https://www.youtube.com"><img src="images/youtube.jpg" alt=""></a></div>
+                    <div class="whats"><a href="https://www.whatsapp.com"><img src="images/whatsapp.webp" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2023 AfriConnect Summit. All rights reserved.</p>
+    </footer>
+    <!-- links javascript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AfriConnect-Summit</title>
     <!-- les links  css-->
-    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <!-- Fonts Google --> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
     <header class="header">
         <nav class="nav">
             <!-- Navigation links -->
-            <div class="logo">Afri <span> connect</span><span>2026</span></div>
+            <div class="logo">Afri<span>connect</span></div>
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
                     <li><a href="index.html" class="nav-link active">Accueil</a></li>
@@ -26,20 +26,28 @@
                     <li><a href="intervenants.html" class="nav-link">Intervenants</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
+            </div>
+            <form class="search-navbar" role="search" action="/recherche" method="GET">
+                <div class="input-group">
+                    <span class="input-group-text bg-light text-muted border-end-0">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input class="form-control" type="search" placeholder="Rechercher..." aria-label="Rechercher" name="query">
+                </div>
+            </form>
+            <div class="nav-menu-1" id="nav-menu-1">
                 <div>
-                    <button>
-                        <a href="inscription.html">Inscription</a>
-                    </button>
+                    <a href="inscription.html" class="btn-inscription">Inscription</a>
                 </div>
                 <button id="theme-toggle" class="theme-toggle">
                     <i class="fas fa-moon" id="theme-icon"></i>
                 </button>
             </div>
-            <button class="hamburger" id="hamburger">
+            <!-- <button class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </button>
+            </button> -->
         </nav>
     </header>
     <!-- Main content -->
@@ -48,8 +56,10 @@
         <section id="hero">
             <h1>Le futur de la Tech Afreicaine se dessine ici</h1>
             <p>25-30 janvier 2027 | Dakar, Senegal</p>
-            <div id="countdown">Temps restant : 00j 00h 00m 00s</div>
-            <a href="contact.html" class="bnt">S'inscrire</a>
+            <div id="countdown"><span>00j</span><span>00h</span><span>00m</span><span>00s</span></div>
+            <div>
+                <a href="contact.html" class="bnt">S'inscrire</a>
+            </div>
         </section> 
           <!--Stats section  -->
         <section id="chiffres-cles">
@@ -112,14 +122,23 @@
         <section id="Sponsors">
             <h2>Nos Partenaires</h2>
             <div class="partenaires-container">
-                <div class="partenaire-item">
-                    <img src="images/partenaire1.png" alt="Partenaire 1">
+                <div class="partenaire-item gold">
+                    <img src="images/google.jpg" alt="Google Partenaire gold">
                 </div>
-                <div class="partenaire-item">
-                    <img src="images/partenaire2.png" alt="Partenaire 2">
+                <div class="partenaire-item silver">
+                    <img src="images/apple.jpg" alt="Apple Partenaire silver">
                 </div>
-                <div class="partenaire-item">
-                    <img src="images/partenaire3.png" alt="Partenaire 3">
+                <div class="partenaire-item silver">
+                    <img src="images/microsoft.jpg" alt="Microsoft Partenaire silver">
+                </div>
+                <div class="partenaire-item bronze">
+                    <img src="images/ibm.jpg" alt="IBM Partenaire bronze">  
+                </div>
+                <div class="partenaire-item bronze">
+                    <img src="images/meta.jpg" alt="Meta Partenaire bronze">  
+                </div>
+                <div class="partenaire-item bronze">
+                    <img src="images/aws.jpg" alt="aws Partenaire bronze">
                 </div>
             </div>
         </section>
@@ -127,12 +146,23 @@
     <!-- Footer -->
     <footer>
         <!-- Footer content -->
-        <div>
-            <ul>
-                <li><a href="#"><img src="images/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
-                <li><a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a></li>
-            </ul>
+        <!-- div: Social media -->
+            <div class="social">
+                <h4>viellez-vous connecter sur nos réseaux sociaux</h4>
+            </div>
+        <!-- div: Social media -->
+        <div class="social-media">
+            <div class="container">
+                <div class="social-icones">
+                    <div class="fac"><a href="https://www.facebook.com"><img src="images/facboook.jpg" alt=""></a></div>
+                    <div class="insta"><a href="https://www.instagram.com"><img src="images/insta.png" alt="" ></a></div>
+                    <div class="twit"><a href="https://www.twitter.com"><img src="images/twitter.png" alt=""></a></div>                            
+                    <div class="link"><a href="https://www.linkedin.com"><img src="images/linkedin.png" alt=""></a></div>
+                    <div class="snap"><a href="https://www.snapchat.com"><img src="images/snap.png" alt=""></a></div>
+                    <div class="yt"><a href="https://www.youtube.com"><img src="images/youtube.jpg" alt=""></a></div>
+                    <div class="whats"><a href="https://www.whatsapp.com"><img src="images/whatsapp.webp" alt=""></a></div>
+                </div>
+            </div>
         </div>
         <p>&copy; 2023 AfriConnect Summit. All rights reserved.</p>
     </footer>

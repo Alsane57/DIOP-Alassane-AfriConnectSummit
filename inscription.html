@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AfriConnect-Summit</title>
     <!-- les links -->
-    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <!-- Fonts Google --> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
     <header class="header">
         <nav class="nav">
             <!-- Navigation links -->
-            <div class="logo">Afri <span> connect</span><span>2026</span></div>
+            <div class="logo">Afri<span>connect</span></div>
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
                     <li><a href="index.html" class="nav-link active">Accueil</a></li>
@@ -26,52 +26,88 @@
                     <li><a href="intervenants.html" class="nav-link">Intervenants</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
+            </div>
+            <form class="search-navbar" role="search" action="/recherche" method="GET">
+                <div class="input-group">
+                    <span class="input-group-text bg-light text-muted border-end-0">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input class="form-control" type="search" placeholder="Rechercher..." aria-label="Rechercher" name="query">
+                </div>
+            </form>
+            <div class="nav-menu-1" id="nav-menu-1">
                 <div>
-                    <button>
-                        <a href="inscription.html">Inscription</a>
-                    </button>
+                    <a href="inscription.html" class="btn-inscription">Inscription</a>
                 </div>
                 <button id="theme-toggle" class="theme-toggle">
                     <i class="fas fa-moon" id="theme-icon"></i>
                 </button>
             </div>
-            <button class="hamburger" id="hamburger">
+            <!-- <button class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </button>
+            </button> -->
         </nav>
     </header>
     <!-- Main content -->
     <main>
         <!-- Hero section -->
-        <section>
-            <!-- formulaire d'inscription -->
-            <form>
-                <label for="name">Nom:</label>
-                <input type="text" id="name" name="name" required>
+        section class="inscription-section">
+            <h1>Inscription</h1>
+            <p>Inscrivez-vous dès maintenant pour rejoindre notre communauté de freelances et clients.</p>
+            <form id="contactForm">
+                <div class="">
+                    <label for="name" class="form-label">Nom complet</label>
+                    <input type="text" class="form-control" id="name" placeholder="Votre nom complet">
+                    <span class="error-msg text-danger small" id="nameError"></span>
+                </div>
+                <div class="">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Votre email">
+                    <span class="error-msg text-danger small" id="emailError"></span>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="password">Mot de passe:</label>
-                <input type="password" id="password" name="password" required>
-
-                <button type="submit">S'inscrire</button>
+                </div>
+                <div class="">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="password" placeholder="Votre mot de passe">
+                </div>
+                <div class="">
+                    <label for="confirmPassword" class="form-label">Confirmer le mot de passe</label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmer votre mot de passe">
+                    <span class="error-msg text-danger small" id="necorrect"></span>
+                </div>
+               <div class="">
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+               </div>
             </form>
-        </section>      
+            <div class="already-account ">
+                <h2>Déjà inscrit ?</h2>
+                <p><a href="connexion.html">Connectez-vous ici</a></p>
+            </div>
+        </section>     
     </main> 
     <!-- Footer -->
     <footer>
-        <!-- Footer content -->
-        <div>
-            <ul>
-                <li><a href="#"><img src="images/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
-                <li><a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a></li>
-            </ul>
+        <!-- div: Social media -->
+            <div class="social">
+                <h4>viellez-vous connecter sur nos réseaux sociaux</h4>
+            </div>
+        <!-- div: Social media -->
+        <div class="social-media">
+            <div class="container">
+                <div class="social-icones">
+                    <div class="fac"><a href="https://www.facebook.com"><img src="images/facboook.jpg" alt=""></a></div>
+                    <div class="insta"><a href="https://www.instagram.com"><img src="images/insta.png" alt="" ></a></div>
+                    <div class="twit"><a href="https://www.twitter.com"><img src="images/twitter.png" alt=""></a></div>                            
+                    <div class="link"><a href="https://www.linkedin.com"><img src="images/linkedin.png" alt=""></a></div>
+                    <div class="snap"><a href="https://www.snapchat.com"><img src="images/snap.png" alt=""></a></div>
+                    <div class="yt"><a href="https://www.youtube.com"><img src="images/youtube.jpg" alt=""></a></div>
+                    <div class="whats"><a href="https://www.whatsapp.com"><img src="images/whatsapp.webp" alt=""></a></div>
+                </div>
+            </div>
         </div>
-         <p>&copy; 2023 AfriConnect Summit. All rights reserved.</p>
+        <p>&copy; 2023 AfriConnect Summit. All rights reserved.</p>
     </footer>
     <!-- links javascript -->
     <script src="js/main.js"></script>

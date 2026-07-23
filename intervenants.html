@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AfriConnect-Summit</title>
     <!-- les links -->
-    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <!-- Fonts Google --> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
+   <!-- Header -->
     <header class="header">
         <nav class="nav">
             <!-- Navigation links -->
-            <div class="logo">Afri <span> connect</span><span>2026</span></div>
+            <div class="logo">Afri<span>connect</span></div>
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
                     <li><a href="index.html" class="nav-link active">Accueil</a></li>
@@ -26,20 +26,28 @@
                     <li><a href="intervenants.html" class="nav-link">Intervenants</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
+            </div>
+            <form class="search-navbar" role="search" action="/recherche" method="GET">
+                <div class="input-group">
+                    <span class="input-group-text bg-light text-muted border-end-0">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input class="form-control" type="search" placeholder="Rechercher..." aria-label="Rechercher" name="query">
+                </div>
+            </form>
+            <div class="nav-menu-1" id="nav-menu-1">
                 <div>
-                    <button>
-                        <a href="inscription.html">Inscription</a>
-                    </button>
+                    <a href="inscription.html" class="btn-inscription">Inscription</a>
                 </div>
                 <button id="theme-toggle" class="theme-toggle">
                     <i class="fas fa-moon" id="theme-icon"></i>
                 </button>
             </div>
-            <button class="hamburger" id="hamburger">
+            <!-- <button class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </button>
+            </button> -->
         </nav>
     </header>
     <!-- Main content -->
@@ -55,21 +63,52 @@
                 </nav>
             </div>
         </section>  
-        <section>
-            <div class="speakers-grid">
+        <section class="freelance-section">
+    <div class="freelance-container">
+        <!-- Grille principale -->
+        <div class="freelance-grid" id="freelance-grid">
+            
+            <!-- Carte Freelance 1 -->
+            <article class="freelance-card fade-in" data-category="developpement">
+                <div class="card-image">
+                    <img src="images/Crisp-Taper-Fade.jfif" alt="Moustapha Ndiaye">
+                </div>
+                <div class="card-body">
+                    <p class="badge">Consultant</p>
+                    <h3 class="card-title">Moustapha Ndiaye</h3>
+                    <p class="card-text">Développeur Web Engineer. Spécialiste en interfaces intuitives.</p>
+                    <div class="price">250 £ / projet</div>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-speaker">Message</a>
+                        <a href="#" class="btn btn-speaker">Follow Me</a>
+                    </div>
+                </div>
+            </article>
+        <section class="speakers-section">
+            <div class="speakers-container">
+                <h2>Nos Intervenants</h2>
+            
+                <div class="speakers-grid">
+                    <article class="speaker-card fade-in" data-category="intervenants">
+                        <div class="speaker-img">
+                            <img src="images/Crisp-Taper-Fade.jfif" alt="Photo de l'intervenant">
+                        </div>
+                        <div class="speaker-info">
+                            <p class="badge">Consultant</p>
+                            <h3 class="card-title">Moustapha Ndiaye</h3>
+                            <p class="card-text">Développeur Web Engineer. Spécialiste en interfaces intuitives.</p>
+                            <div class="price">250 £ / projet</div>
+                            <div class="btn-speakers">
+                                <a href="#" class="btn btn-speaker">Message</a>
+                                <a href="#" class="btn btn-speaker">Follow Me</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
                 <article class="speaker-card">
                     <div class="speaker-img">
-                        <img src="images/intervenant1.jpg" alt="Photo de l'intervenant">
-                    </div>
-                    <div class="speaker-info">
-                        <h3>Alassane Diop</h3>
-                        <p class="specialty">Expert en LLM</p>
-                        <p class="country">🇸🇳 Sénégal</p>
-                    </div>
-                </article>
-                <article class="speaker-card">
-                    <div class="speaker-img">
-                        <img src="images/intervenant2.jpg" alt="Photo de l'intervenant">
+                        <img src="images/Crisp-Taper-Fade.jfif" alt="Photo de l'intervenant">
                     </div>
                     <div class="speaker-info">
                         <h3>Fatou Ndiaye</h3>
@@ -147,23 +186,31 @@
                         <p class="country">🇸🇳 Sénégal</p>
                     </div>  
                 </article>
-                
-
                 <!-- ... autres intervenants ... -->
             </div>
        </section>
     </main> 
     <!-- Footer -->
     <footer>
-        <!-- Footer content -->
-        <div>
-            <ul>
-                <li><a href="#"><img src="images/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
-                <li><a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a></li>
-            </ul>
+        <!-- div: Social media -->
+            <div class="social">
+                <h4>viellez-vous connecter sur nos réseaux sociaux</h4>
+            </div>
+        <!-- div: Social media -->
+        <div class="social-media">
+            <div class="container">
+                <div class="social-icones">
+                    <div class="fac"><a href="https://www.facebook.com"><img src="images/facboook.jpg" alt=""></a></div>
+                    <div class="insta"><a href="https://www.instagram.com"><img src="images/insta.png" alt="" ></a></div>
+                    <div class="twit"><a href="https://www.twitter.com"><img src="images/twitter.png" alt=""></a></div>                            
+                    <div class="link"><a href="https://www.linkedin.com"><img src="images/linkedin.png" alt=""></a></div>
+                    <div class="snap"><a href="https://www.snapchat.com"><img src="images/snap.png" alt=""></a></div>
+                    <div class="yt"><a href="https://www.youtube.com"><img src="images/youtube.jpg" alt=""></a></div>
+                    <div class="whats"><a href="https://www.whatsapp.com"><img src="images/whatsapp.webp" alt=""></a></div>
+                </div>
+            </div>
         </div>
-         <p>&copy; 2023 AfriConnect Summit. All rights reserved.</p>
+        <p>&copy; 2023 AfriConnect Summit. All rights reserved.</p>
     </footer>
     <!-- links javascript -->
     <script src="js/main.js"></script>
