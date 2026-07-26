@@ -1020,3 +1020,108 @@ input:focus, select:focus, textarea:focus {
     background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%); 
     box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4); 
 }
+footer div ul li{
+    list-style: none;
+}
+footer div ul li a{
+    color: var(--text-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Couleur de ton Bleu Tech pour le titre principal */
+.text-blue-talent {
+    color: #3b82f6 !important;
+}
+
+/* Titres des colonnes avec une petite bordure discrète */
+.footer-heading {
+    color: var(--bg-dark-color);
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+/* Force les icônes à avoir la même emprise pour un alignement de texte parfait */
+.icon-width {
+    width: 20px;
+    text-align: center;
+    color: #3b82f6; 
+}
+
+/* Liens du footer plus doux (gris) qui passent au blanc/bleu au survol */
+.footer-links a {
+    text-decoration: none;    
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--bg-primary)!important;
+    transform: translateX(4px); 
+}
+
+.footer-links a:hover .icon-width {
+    color: #06b6d4; 
+}
+.container-footer{
+    text-align: center;
+    padding: 50px;
+}
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.footer-navigation{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.footer-talents{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.link{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.link a{
+    color: var(--text-white);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+.link i{
+    padding-right: 25px;
+}
+.text-uppercase {
+    text-transform: uppercase;
+    font-weight: 900;
+    padding-bottom: 20px;
+    line-height: 1.5;
+    
+}
+.summit{
+    margin-top: 25px;
+}
+.footer-description{
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+.footer-description p{
+    color: var(--text-white);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
