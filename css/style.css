@@ -827,14 +827,8 @@ header.scrolled {
     height: clamp(35px, 4vw, 50px); 
 }
 /* Mon Programme  */
-.tabs-nav {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 2rem;
-}
 
-.tab-btn {
+/* .tab-btn {
     margin: 20px 5px;
     padding: 12px 25px;
     cursor: pointer;
@@ -844,139 +838,124 @@ header.scrolled {
     transition: var(--transition);
     border-radius: 50px;
     border: 1px solid var(--primary-color);
-}
+} */
 .tab-btn.active {
     background: var(--primary-bg);
     color: var(--white);
 }
-/* Gestion de l'affichage des contenus */
-.tab-pane {
-    display: none; /* Masqué par défaut */
+/* --- HERO INTERNE --- */
+.hero-interne {
+    height: 45vh;
+    background: url('../images/hero-programme.jpg') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--color);
 }
 
-.tab-pane.active {
-    display: block; /* Affiché si actif */
-    animation: fadeIn 0.5s ease;
+.hero-overlay {
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(to right, rgba(0, 123, 255, 0.8), transparent);
 }
 
-/* Style du tableau HTML */
+.hero-interne h1 {
+    font-family: var(--main-font);
+    font-size: clamp(2.5rem, 6vw, 4rem); /* Taille fluide [7] */
+    text-transform: uppercase;
+}
+
+/* --- ONGLETS (Flexbox & Glassmorphism) --- */
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    border: 1px solid var(--primary-color);
+    background: var(--bg-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: var(--transition); /* Transition obligatoire [5] */
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.tab-btn.active {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-5px);
+}
+.section-title {
+    padding: 50px;
+}
+/* --- TABLEAUX STYLISÉS --- */
 .schedule-table {
     width: 100%;
-    border-collapse: collapse; /* Fusion des bordures pour un aspect net [4] */
-    margin-top: 1rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-collapse: collapse;
+    background: var(--bg-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
 }
 
-.schedule-table th, .schedule-table td {
-    padding: 15px;
-    border: 1px solid #ddd;
+.schedule-table th {
+    background: var(--Secondaire-color);
+    color: white;
+    padding: 1.5rem;
     text-align: left;
 }
 
-.schedule-table thead {
-    background-color: var(--table-header);
-    color: var(--white);
+.schedule-table td {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--gray-color);
 }
 
-/* Alternance de couleurs (Zebra striping) [1] */
+/* Alternance de couleurs (Zebra Striping) [8, 9] */
 .schedule-table tbody tr:nth-child(even) {
-    background-color: var(--row-alt);
-}
-/* style du second section */
-.section-theme {
-    padding: clamp(3rem, 8vw, 6rem) 1.5rem;
-    background-color: var(--bg-white);
+    background-color: rgba(0, 123, 255, 0.05);
 }
 
-.section-title {
-    text-align: center;
-    font-family: var(--main-font); /* Poppins selon votre root */
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--text-main);
-    margin-bottom: 3.5rem;
-}
-
-/* --- GRILLE CSS GRID --- */
+/* --- SECTION THÉMATIQUES (Grid 2x2) [10, 11] --- */
 .thema-grid {
-    display: grid; /* Usage obligatoire de Grid [3] */
-    /* Crée une grille fluide qui s'adapte sans media queries complexes */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Grille 2x2 demandée [12] */
     gap: 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 2rem 0;
 }
 
-/* --- STYLE DE LA CARTE --- */
 .thema-card {
     background: var(--bg-white);
-    padding: 2.5rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    transition: var(--transition); /* Transition sur élément interactif [3] */
+    padding: 3rem;
+    border-radius: 20px;
     text-align: center;
-    border: 1px solid var(--gray-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    /* État initial pour l'animation IntersectionObserver [2] */
-    opacity: 0;
-    transform: translateY(30px);
+    box-shadow: var(--shadow);
+    border-bottom: 4px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.thema-card:hover {
+    transform: scale(1.03) translateY(-10px); /* Effet moderne [13] */
 }
 
 .thema-icon {
-    font-size: 2.5rem;
-    color: var(--accent-color); /* Votre couleur #FD4766 */
+    font-size: 3rem;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
 }
 
-.thema-card h3 {
-    color: var(--primary-color); /* Votre bleu #007bff */
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.thema-card p {
-    color: var(--secondary-color);
-    line-height: 1.6;
-}
-
-/* --- EFFETS HOVER (Ombre + Translation) --- */
-.thema-card:hover {
-    /* Effet hover : ombre + translation exigé par le sujet [1] */
-    transform: translateY(-12px); 
-    box-shadow: 0 15px 30px rgba(0, 123, 255, 0.15);
-    border-color: var(--primary-color);
-}
-
-/* --- CLASSE POUR L'ANIMATION JS --- */
-.thema-card.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* --- RESPONSIVITÉ MOBILE (375px) [5, 14] --- */
+@media (max-width: 768px) {
+    .thema-grid { grid-template-columns: 1fr; } /* Passage en 1 colonne sur mobile */
+    .tabs-nav { flex-direction: column; }
+    .schedule-table { display: block; overflow-x: auto; } /* Scroll horizontal pour tableaux */
 }
 /* Proggrame*/
-.hero-programme {
-    width: 100%;
-    min-height: 40vh; 
-    display: flex;    
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 4rem 1rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/img0-\(7\).jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
-.container-hero h1 {
-    font-family: var(--font-title);
-    /* clamp(min, ideal, max) pour une taille fluide sans media queries complexes */
-    font-size: clamp(2rem, 6vw, 3.5rem); 
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
 .breadcrumb {
     font-family: var(--font-body);

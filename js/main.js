@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ==========================================================================
-       1. GESTION DU MENU HAMBURGER
-       ========================================================================== */
     const hamburger = document.getElementById("hamburger");
     // Correction : l'ID HTML exact est "nav-menu" (avec un tiret)
     const navMenu = document.getElementById("nav-menu"); 
@@ -27,9 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ==========================================================================
-       2. GESTION DU DARK MODE (Thème clair / sombre)
-       ========================================================================== */
+    //    2. GESTION DU DARK MODE (Thème clair / sombre)
+  
     const themeToggle = document.getElementById("theme-toggle");
     const themeIcon = document.getElementById("theme-icon");
 
@@ -69,9 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    /* ==========================================================================
-       3. EFFET HEADER AU SCROLL
-       ========================================================================== */
+
     const header = document.getElementById("header");
 
     if (header) {
@@ -103,4 +97,125 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+    //  ALGORITHME DU COMPTE À REBOURS (SECTION HERO)
+    const dateEvenement = new Date("Dec 25, 2026 09:00:00").getTime();
+
+    const actualiserCompteARebours = setInterval(() => {
+        const maintenant = new Date().getTime();
+        const distance = dateEvenement - maintenant;
+
+        // Calcul du temps pour les jours, heures, minutes et secondes 
+        const jours = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const heures = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const secondes = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Injection dans le HTML via les IDs fournis dans votre structure
+        document.getElementById("days").innerText = jours + " J";
+        document.getElementById("hours").innerText = heures + " H";
+        document.getElementById("minutes").innerText = minutes + " M";
+        document.getElementById("seconds").innerText = secondes + " S";
+
+        // Arrêt du compte à rebours une fois la date atteinte
+        if (distance < 0) {
+            clearInterval(actualiserCompteARebours);
+            document.querySelector(".countdown-container").innerHTML = "L'événement a commencé !";
+        }
+    }, 1000);
+
+    // COMPTEURS ANIMÉS (SECTION CHIFFRES CLÉS)
+    const statistiques = document.querySelectorAll('.counter');
+    
+    const optionsObservateur = {
+        threshold: 0.5 // L'animation se lance quand 50% de l'élément est visible [5]
+    };
+
+    const observateurStats = new IntersectionObserver((entrees, observateur) => {
+        entrees.forEach(entree => {
+            if (entree.isIntersecting) {
+                const element = entree.target;
+                // Extraction du nombre (ex: "1200" depuis "+1200")
+                const cible = parseInt(element.innerText.replace(/\D/g, ''));
+                lancerAnimationCompteur(element, 0, cible, 2000);
+                observateur.unobserve(element); // On arrête d'observer après l'animation [5]
+            }
+        });
+    }, optionsObservateur);
+
+    function lancerAnimationCompteur(obj, debut, fin, duree) {
+        let debutTemps = null;
+        const etape = (timestamp) => {
+            if (!debutTemps) debutTemps = timestamp;
+            const progres = Math.min((timestamp - debutTemps) / duree, 1);
+            obj.innerHTML = "+" + Math.floor(progres * (fin - debut) + debut);
+            if (progres < 1) {
+                window.requestAnimationFrame(etape);
+            }
+        };
+        window.requestAnimationFrame(etape);
+    }
+
+    statistiques.forEach(stat => observateurStats.observe(stat));
+
+
+    // ==========================================================================
+    // 3. ANIMATIONS D'APPARITION AU SCROLL (FADE-IN)
+    // ==========================================================================
+    // On cible toutes les sections pour les faire apparaître progressivement [6]
+    const sections = document.querySelectorAll('section');
+
+    const observateurSections = new IntersectionObserver((entrees) => {
+        entrees.forEach(entree => {
+            if (entree.isIntersecting) {
+                entree.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        section.classList.add('reveal'); // Ajout d'une classe de base pour le CSS
+        observateurSections.observe(section);
+    });
+
+
+    // ANNÉE AUTOMATIQUE DANS LE FOOTER
+    const anneeElement = document.getElementById('current-year');
+    if (anneeElement) {
+        anneeElement.textContent = new Date().getFullYear(); // Récupère l'année en cours [2]
+    }
+
+    // --- GESTION DES ONGLETS ---
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetDay = btn.getAttribute('data-day');
+
+            // Retirer l'état actif partout
+            tabButtons.forEach(b => b.classList.remove('active'));
+            tabPanes.forEach(p => p.classList.remove('active'));
+
+            // Activer l'élément cliqué
+            btn.classList.add('active');
+            document.getElementById(targetDay).classList.add('active');
+        });
+    });
+
+    // --- ANIMATIONS AU SCROLL (IntersectionObserver) [4, 16, 17] ---
+    const observerOptions = { threshold: 0.2 };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible'); // Ajoute la classe d'animation
+                observer.unobserve(entry.target); // Anime une seule fois
+            }
+        });
+    }, observerOptions);
+
+    // Cible les cartes thématiques et le contenu du planning
+    const animatedElements = document.querySelectorAll('.thema-card, .tabs-content');
+    animatedElements.forEach(el => observer.observe(el));
+
 });

@@ -59,95 +59,93 @@
     </header>
     <!-- Main content -->
     <main>
-        <!-- Hero section -->
-        <section class="hero-programme">
-            <div class="container-hero">
-                <h1>Programme complet</h1>
-                <nav class="breadcrumb">
-                    <span><a href="index.html">Accueil</a></span> 
-                    <span class="current"> <a href="programme.html" class="active">Programme</a> </span>
-                </nav>
-            </div>
-        </section>  
-        <section class="section-programme py-5">
+        <!-- HERO INTERNE -->
+    <section class="hero-interne">
+        <div class="hero-overlay">
             <div class="container">
-                <!-- Barre des onglets -->
-                <nav class="tabs-nav">
-                    <button class="tab-btn active" data-day="jour1">Jour 1 -- 15 Oct.</button>
-                    <button class="tab-btn" data-day="jour2">Jour 2 - 16 Oct.</button>
-                    <button class="tab-btn" data-day="jour3">Jour 3 - 17 Oct.</button>
+                <h1 class="fade-in">Programme complet</h1>
+                <nav class="breadcrumb">
+                    <a href="index.html">Accueil</a> 
+                    <span class="separator">/</span> 
+                    <span class="current">Programme</span>
                 </nav>
-                <div class="tabs-content">
-                    <!-- Planning Jour 1 -->
-                    <div id="jour1" class="tab-pane active">
-                        <table class="schedule-table">
-                            <thead>
-                                <tr>
-                                    <th>Heure</th>
-                                    <th>Session</th>
-                                    <th>Intervenant</th>
-                                    <th>Salle</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>09:00 - 10:30</td>
-                                    <td>Ouverture & Keynote IA</td>
-                                    <td>Amina Diallo</td>
-                                    <td>Amphi A</td>
-                                </tr>
-                                <!-- Répétez pour au moins 5 sessions -->
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- Planning Jour 2 (Caché par défaut) -->
-                    <div id="jour2" class="tab-pane">
-                        <!-- Structure de table identique au Jour 1 -->
-                    </div>
-                    <!-- Planning Jour 3 (Caché par défaut) -->
-                    <div id="jour3" class="tab-pane">
-                        <!-- Structure de table identique au Jour 1 -->
-                    </div>
-                </div>
             </div>
-        </section> 
-        <section id="thematiques" class="section-theme reveal">
-            <div class="thema-container">
-                <h2 class="section-title">Thématiques du Sommet</h2>
-                <div class="thema-grid">
-                    <!-- Thématique 1 -->
-                    <article class="thema-card">
-                        <div class="thema-icon"><i class="bi bi-cpu"></i></div>
-                        <h3>Intelligence Artificielle</h3>
-                        <p>Explorez les dernières avancées en IA et leur impact sur l'industrie africaine.</p>    
-                    </article>
-                    <!-- Thématique 2 -->
-                    <article class="thema-card">
-                        <div class="thema-icon"><i class="bi bi-shield-lock"></i></div>
-                        <h3>Cybersécurité</h3>
-                        <p>Apprenez les meilleures pratiques pour protéger vos données et vos infrastructures.</p>
-                    </article>
-                    <!-- Thématique 3 -->
-                    <article class="thema-card">
-                        <div class="thema-icon"><i class="bi bi-link-45deg"></i></div>
-                        <h3>Blockchain</h3>
-                        <p>Découvrez comment la décentralisation transforme la finance et la traçabilité.</p>
-                    </article>
-                    <!-- Thématique 4 -->
-                    <article class="thema-card">
-                        <div class="thema-icon"><i class="bi bi-cloud-arrow-up"></i></div>
-                        <h3>Cloud Computing</h3>
-                        <p>Comprenez comment le cloud optimise l'agilité et l'innovation des entreprises.</p>
-                    </article>
-                    <!-- Thématique 5 (Obligatoire : min 5 sessions/thèmes) -->
-                    <article class="thema-card">
-                        <div class="thema-icon"><i class="bi bi-leaf"></i></div>
-                        <h3>Green Tech</h3>
-                        <p>L'innovation technologique au service du développement durable et de l'énergie.</p>
-                    </article>
+        </div>
+    </section>
+
+    <!-- SECTION PLANNING AVEC ONGLETS -->
+    <section class="section-planning ">
+        <div class="container">
+            <h2 class="section-title ">Explorez les 3 jours d'innovation</h2>
+            
+            <!-- Navigation des onglets -->
+            <nav class="tabs-nav">
+                <button class="tab-btn active" data-day="jour1">
+                    <i class="fas fa-calendar-day"></i> Jour 1 <span>15 Oct.</span>
+                </button>
+                <button class="tab-btn" data-day="jour2">
+                    <i class="fas fa-calendar-day"></i> Jour 2 <span>16 Oct.</span>
+                </button>
+                <button class="tab-btn" data-day="jour3">
+                    <i class="fas fa-calendar-day"></i> Jour 3 <span>17 Oct.</span>
+                </button>
+            </nav>
+
+            <!-- Contenu des plannings -->
+            <div class="tabs-content reveal">
+                <!-- Planning Jour 1 -->
+                <div id="jour1" class="tab-pane active">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th><i class="far fa-clock"></i> Heure</th>
+                                <th><i class="fas fa-desktop"></i> Session</th>
+                                <th><i class="fas fa-user-tie"></i> Intervenant</th>
+                                <th><i class="fas fa-map-marker-alt"></i> Salle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>08:30 - 09:30</td><td>Accueil & Badgeage</td><td>Équipe d'organisation</td><td>Hall d'entrée</td></tr>
+                            <tr><td>09:30 - 11:00</td><td>Keynote : L'IA au service de l'Afrique</td><td>Dr. Moussa Diop</td><td>Amphi Prestige</td></tr>
+                            <tr><td>11:15 - 12:45</td><td>Atelier : Développement Web Moderne</td><td>Sarah Chen</td><td>Lab Tech 1</td></tr>
+                            <tr><td>14:00 - 15:30</td><td>Conférence : Cybersécurité 2026</td><td>Amina Diallo</td><td>Amphi Prestige</td></tr>
+                            <tr><td>15:45 - 17:00</td><td>Table ronde : Investir dans la Tech</td><td>Panel d'experts</td><td>Salle Business</td></tr>
+                        </tbody>
+                    </table>
                 </div>
+                <!-- Répétez pour Jour 2 et Jour 3 avec au moins 5 sessions chacun -->
             </div>
-        </section>  
+        </div>
+    </section>
+
+    <!-- SECTION THÉMATIQUES (Grid 2x2) -->
+    <section id="thematiques" class="section-theme py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Thématiques Clés</h2>
+            <div class="thema-grid">
+                <article class="thema-card zoom-in">
+                    <div class="thema-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Intelligence Artificielle</h3>
+                    <p>Découvrez comment l'IA transforme les industries locales, de l'agriculture à la finance solidaire.</p>
+                </article>
+                <article class="thema-card zoom-in">
+                    <div class="thema-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Cybersécurité</h3>
+                    <p>Protection des données et souveraineté numérique : les enjeux majeurs pour le continent en 2026.</p>
+                </article>
+                <article class="thema-card zoom-in">
+                    <div class="thema-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Business & Startup</h3>
+                    <p>Accompagner la croissance des pépites technologiques africaines et attirer les investisseurs mondiaux.</p>
+                </article>
+                <article class="thema-card zoom-in">
+                    <div class="thema-icon"><i class="fas fa-database"></i></div>
+                    <h3>Big Data & Cloud</h3>
+                    <p>Infrastructure et gestion massive des données pour une Afrique interconnectée et performante.</p>
+                </article>
+            </div>
+        </div>
+    </section>  
     </main> 
     <!-- Footer -->
     <footer>
