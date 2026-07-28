@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const hamburger = document.getElementById("hamburger");
     // Correction : l'ID HTML exact est "nav-menu" (avec un tiret)
-    const navMenu = document.getElementById("nav-menu"); 
+    const navMenu = document.getElementById("nav-Menu"); 
     const hamburgerIcon = document.getElementById("hamburger-icon");
 
     if (hamburger && navMenu) {

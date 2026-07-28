@@ -216,10 +216,10 @@ h2, h3, h4, h5, h6, li, a, label {
    ========================================================================== */
 
 /* A. MOBILE (Exemple iPhone 375px et jusqu'à 767px) */
-@media (max-width: 767px) {
+@media (max-width: 600px) {
     .hamburger { display: block; }
 
-    .nav-menu {
+    .nav-Menu {
         position: fixed;
         top: 0;
         right: -100%;
@@ -236,7 +236,9 @@ h2, h3, h4, h5, h6, li, a, label {
         z-index: 1050;
     }
 
-    .nav-menu.open { right: 0 !important; }
+    .nav-Menu.open { 
+        right: 0 !important; 
+    }
 
     .nav-links {
         list-style: none;
@@ -259,11 +261,13 @@ h2, h3, h4, h5, h6, li, a, label {
     }
 }
 
+
+
 /* B. TABLETTE (768px à 1199px) */
 @media (min-width: 768px) and (max-width: 1199px) {
     .hamburger { display: block; }
 
-    .nav-menu {
+    .nav-Menu {
         position: fixed;
         top: 0;
         right: -100%;
@@ -279,7 +283,7 @@ h2, h3, h4, h5, h6, li, a, label {
         z-index: 1050;
     }
 
-    .nav-menu.open { right: 0 !important; }
+    .nav-Menu.open { right: 0 !important; }
 
     .nav-links {
         list-style: none;
@@ -294,13 +298,13 @@ h2, h3, h4, h5, h6, li, a, label {
         gap: 1.5rem;
         margin-top: auto;
     }
-}
+} 
 
 /* C. DESKTOP (1200px+) */
 @media (min-width: 1200px) {
     .hamburger { display: none !important; }
 
-    .nav-menu {
+    .nav-Menu {
         position: static;
         width: auto;
         height: auto;
@@ -463,38 +467,6 @@ header.scrolled {
     background-color: #1550d6;
     transform: translateY(-3px);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Css page acceiulle */
@@ -980,35 +952,28 @@ header.scrolled {
 }
 /* Mon Programme  */
 
-/* .tab-btn {
-    margin: 20px 5px;
-    padding: 12px 25px;
-    cursor: pointer;
-    border: 2px solid var(--primary-bg);
-    background: transparent;
-    font-weight: bold;
-    transition: var(--transition);
-    border-radius: 50px;
-    border: 1px solid var(--primary-color);
-} */
 .tab-btn.active {
     background: var(--primary-bg);
     color: var(--white);
 }
+
+
+
 /* --- HERO INTERNE --- */
 .hero-interne {
     height: 45vh;
-    background: url('../images/hero-programme.jpg') center/cover no-repeat;
     position: relative;
     display: flex;
     align-items: center;
     color: var(--color);
+    background: linear-gradient(rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.849)),  url(../images/pexels-\(4\).jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-.hero-overlay {
+.hero-overlay {  
     width: 100%;
-    padding: 2rem;
-    background: linear-gradient(to right, rgba(0, 123, 255, 0.8), transparent);
+    padding: 6rem;
 }
 
 .hero-interne h1 {
@@ -1186,7 +1151,68 @@ header.scrolled {
 
 /* INTERVENANTS*/
 
+.hero-programme {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    height: 45vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.849)),  url(../images/pexels-\(5\).jpg);
+    background-size: cover;
+    background-position: center;
+}
 
+.container-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem;
+}
+
+.hero-programme h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+/* --- FIL D'ARIANE (BREADCRUMB) --- */
+.breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 25px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+.breadcrumb a:hover {
+    color: var(--couleur-accent);
+}
+
+.breadcrumb .separator {
+    margin: 0 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero-programme {
+        padding: 50px 15px;
+    }
+    
+    .breadcrumb {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+}
 
 /* --- STYLE DES BOUTONS --- */
 .filter-buttons{
@@ -1691,22 +1717,6 @@ background: none;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* footer */
 .social-media{
     padding-top: 100px;
@@ -2055,5 +2065,58 @@ footer div ul li a{
     .social-header h4 {
         font-size: 0.9rem;
         margin-bottom: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 758px) {
+    .countdown-item{
+        min-width: 80px;
+        padding: 15px;
+    }
+     .countdown-item span{
+        font-size: 1.5rem;
+     }
+}
+@media screen and (max-width: 480px) {
+    .countdown-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+@media screen and (max-width: 992px) {
+    
+     .pourquoi-content{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "title"
+        "detail1"
+        "detail2"
+        "detail3";
+        gap: 1.5rem;
+    }
+
+    #pourquoi h2{
+        font-size: 2,2rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    
+    #pourquoi{
+        padding: 3rem 1rem;
+    }
+
+    .pourquoi-details1, .pourquoi-details2, .pourquoi-details3 {
+        padding: 15px;
+        border-radius: 15px;
+
+    }
+    .pourquoi-content p{
+        font-size: 0,85rem;
+        margin: 0 5px;
+    }
+    .btn{
+        width: 100%;
+        text-align: center;
     }
 }
