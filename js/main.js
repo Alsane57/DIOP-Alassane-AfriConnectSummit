@@ -218,4 +218,99 @@ document.addEventListener("DOMContentLoaded", () => {
     const animatedElements = document.querySelectorAll('.thema-card, .tabs-content');
     animatedElements.forEach(el => observer.observe(el));
 
+    // --- FILTRAGE DYNAMIQUE ---
+    const filterButtons = document.querySelectorAll('.btn-filter');
+    const speakerCards = document.querySelectorAll('.speaker-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Gérer l'état actif des boutons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            speakerCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'block'; // Ou 'flex' selon votre CSS
+                    card.classList.add('fade-in'); // Animation optionnelle
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+
+
+    // --- VALIDATION DE FORMULAIRE ---
+    const contactForm = document.getElementById('contactForm');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // Empêcher l'envoi réel [11]
+                let isValid = true;
+
+                // Sélecteurs des champs
+                const name = document.getElementById('fullname');
+                const email = document.getElementById('email');
+                const phone = document.getElementById('phone');
+                const message = document.getElementById('message');
+
+                // 1. Validation Nom Complet (Requis)
+                if (name.value.trim() === "") {
+                    showError(name, "Le nom est obligatoire");
+                    isValid = false;
+                } else {
+                    showSuccess(name);
+                }
+
+                // 2. Validation Email (Regex) [10]
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email.value)) {
+                    showError(email, "Format d'email invalide");
+                    isValid = false;
+                } else {
+                    showSuccess(email);
+                }
+
+                // 3. Validation Téléphone (min 8 chiffres) [10]
+                if (phone.value.length < 8) {
+                    showError(phone, "Minimum 8 chiffres requis");
+                    isValid = false;
+                } else {
+                    showSuccess(phone);
+                }
+
+                // 4. Validation Message (min 20 caractères) [9]
+                if (message.value.length < 20) {
+                    showError(message, "Le message doit faire au moins 20 caractères");
+                    isValid = false;
+                } else {
+                    showSuccess(message);
+                }
+
+                // Action finale si tout est valide
+                if (isValid) {
+                    alert("Succès ! Votre inscription a été enregistrée."); // Message stylisé recommandé
+                    contactForm.reset(); // Réinitialisation obligatoire [10]
+                    resetVisuals();
+                }
+            });
+        }
+
+        // Fonctions utilitaires pour le retour visuel
+        function showError(input, msg) {
+            input.style.borderColor = "var(--bg-dander)"; // Rouge [10]
+            const errorSpan = input.nextElementSibling;
+            if (errorSpan) errorSpan.innerText = msg;
+        }
+
+        function showSuccess(input) {
+            input.style.borderColor = "var(--success-color)"; // Vert [10]
+            const errorSpan = input.nextElementSibling;
+            if (errorSpan) errorSpan.innerText = "";
+        }
+
 });

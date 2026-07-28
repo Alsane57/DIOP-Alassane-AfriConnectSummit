@@ -28,9 +28,9 @@
             <!-- Menu principal (Contenu rétractable) -->
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-links">
-                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                    <li><a href="index.html" class="nav-link ">Accueil</a></li>
                     <li><a href="programme.html" class="nav-link">Programme</a></li>
-                    <li><a href="intervenants.html" class="nav-link">Intervenants</a></li>
+                    <li><a href="intervenants.html" class="nav-link active">Intervenants</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
 
@@ -73,8 +73,57 @@
         <section class="speakers-section">
             <div class="speakers-container">
                 <h2>Nos Intervenants</h2>
+
+                <!-- Boutons de filtre -->
+                <div class="filter-buttons">
+                    <button class="btn-filter active" data-filter="all">Tous</button>
+                    <button class="btn-filter" data-filter="ia">IA & Tech</button>
+                    <button class="btn-filter" data-filter="business">Business</button>
+                    <!-- Ajoutez les autres thèmes -->
+                </div>
                 <div class="speakers-grid">
-                    <article class="speaker-card fade-in" id="speaker-1" data-category="intervenants">
+                    <article class="speaker-card fade-in" id="speaker-1" data-category="ia">
+                        <div class="card">            
+                            <img src="images/telech-(1).jfif" alt="Avatar" style="width:100%">
+                            <div class="container">
+                                <h4><b>Fatou Ndiaye</b></h4> 
+                                <p class="specialty">Développeur Web Engineer. Spécialiste en IA</p>
+                                <p class="country">🇸🇳 Sénégal</p>
+                                <div class="btn-speakers">
+                                    <a href="#" class="btn btn-speaker">Voir le profil</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="speaker-card fade-in" id="speaker-1" data-category="business">
+                        <div class="card">            
+                            <img src="images/telech-(1).jfif" alt="Avatar" style="width:100%">
+                            <div class="container">
+                                <h4><b>Cheikh Fall</b></h4> 
+                                <p class="specialty">Consultant en Cybersécurité. Data Scientist </p>
+                                <p class="country">🇸🇳 Sénégal</p>
+                                <div class="btn-speakers">
+                                    <a href="#" class="btn btn-speaker">Voir le profil</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="speaker-card fade-in" id="speaker-1" data-category="ia">
+                        <div class="card">            
+                            <img src="images/telech-(1).jfif" alt="Avatar" style="width:100%">
+                            <div class="container">
+                                <h4><b>Aminata Sarr</b></h4> 
+                                <p class="specialty">Entrepreneure Tech and Ingénieure Logiciel</p>
+                                <p class="country">🇬🇼 Guinée-Bissau</p>
+                                <div class="btn-speakers">
+                                    <a href="#" class="btn btn-speaker">Voir le profil</a>
+                                </div>  
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="speakers-grid">
+                    <article class="speaker-card fade-in" id="speaker-1" data-category="ia">
                         <div class="card">            
                             <img src="images/telech-(1).jfif" alt="Avatar" style="width:100%">
                             <div class="container">
@@ -115,7 +164,7 @@
                     </article>
                 </div>
                 <div class="speakers-grid">
-                    <article class="speaker-card fade-in" id="speaker-1" data-category="intervenants">
+                    <article class="speaker-card fade-in" id="speaker-1" data-category="business">
                         <div class="card">            
                             <img src="images/telech-(1).jfif" alt="Avatar" style="width:100%">
                             <div class="container">
@@ -128,7 +177,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="speaker-card fade-in" id="speaker-1" data-category="intervenants">
+                    <article class="speaker-card fade-in" id="speaker-1" data-category="ia">
                         <div class="card">            
                             <img src="images/telech-(1).jfif" alt="Avatar" style="width:100%">
                             <div class="container">
@@ -156,7 +205,7 @@
                     </article>
                 </div>
                 <div class="speakers-grid">
-                    <article class="speaker-card fade-in" id="speaker-1" data-category="intervenants">
+                    <article class="speaker-card fade-in" id="speaker-1" data-category="ia">
                         <div class="card">            
                             <img src="images/telech-(1).jfif" alt="Avatar" style="width:100%">
                             <div class="container">
@@ -169,7 +218,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="speaker-card fade-in" id="speaker-1" data-category="intervenants">
+                    <article class="speaker-card fade-in" id="speaker-1" data-category="business">
                         <div class="card">            
                             <img src="images/telech-(1).jfif" alt="Avatar" style="width:100%">
                             <div class="container">
@@ -182,48 +231,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="speaker-card fade-in" id="speaker-1" data-category="intervenants">
-                        <div class="card">            
-                            <img src="images/telech-(1).jfif" alt="Avatar" style="width:100%">
-                            <div class="container">
-                                <h4><b>Aminata Sarr</b></h4> 
-                                <p class="specialty">Entrepreneure Tech and Ingénieure Logiciel</p>
-                                <p class="country">🇬🇼 Guinée-Bissau</p>
-                                <div class="btn-speakers">
-                                    <a href="#" class="btn btn-speaker">Voir le profil</a>
-                                </div>  
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="speakers-grid">
-                    <article class="speaker-card fade-in" id="speaker-1" data-category="intervenants">
-                        <div class="card">            
-                            <img src="images/telech-(1).jfif" alt="Avatar" style="width:100%">
-                            <div class="container">
-                                <h4><b>Fatou Ndiaye</b></h4> 
-                                <p class="specialty">Développeur Web Engineer. Spécialiste en IA</p>
-                                <p class="country">🇸🇳 Sénégal</p>
-                                <div class="btn-speakers">
-                                    <a href="#" class="btn btn-speaker">Voir le profil</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="speaker-card fade-in" id="speaker-1" data-category="intervenants">
-                        <div class="card">            
-                            <img src="images/telech-(1).jfif" alt="Avatar" style="width:100%">
-                            <div class="container">
-                                <h4><b>Cheikh Fall</b></h4> 
-                                <p class="specialty">Consultant en Cybersécurité. Data Scientist </p>
-                                <p class="country">🇸🇳 Sénégal</p>
-                                <div class="btn-speakers">
-                                    <a href="#" class="btn btn-speaker">Voir le profil</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="speaker-card fade-in" id="speaker-1" data-category="intervenants">
+                    <article class="speaker-card fade-in" id="speaker-1" data-category="business">
                         <div class="card">            
                             <img src="images/telech-(1).jfif" alt="Avatar" style="width:100%">
                             <div class="container">

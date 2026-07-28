@@ -34,6 +34,17 @@ body{
     --border-radius: 8px;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Couleurs de fond (Backgrounds) */
+    --couleur-fond-principale: #1a1a1d; /* Un noir/gris très foncé moderne */
+    --couleur-fond-carte: #2c2c30;      /* Un gris légèrement plus clair pour des éléments */
+
+    /* Couleurs de texte */
+    --couleur-texte-principal: #ffffff; /* Blanc pur pour le texte principal */
+    --couleur-texte-secondaire: #a0a0a0; /* Gris clair pour les sous-titres (ex: dates) */
+
+    /* Couleurs d'accentuation (Boutons, liens survolés) */
+    --couleur-accent: #e74c3c;         /* Le rouge/corail actuel, ou changez-le ici */
+    --couleur-accent-hover: #c0392b;   /* Un rouge plus sombre pour le survol */
     
     /* Dégradés [4] */
     --gradient-color: linear-gradient(-224deg, var(--primary-color) 0%, #337DFF 100%);
@@ -51,34 +62,16 @@ body{
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-
-/* ==========================================================================
-   3. RESET ET BASE UNIVERSELLE (Dark Mode appliqué PARTOUT)
-   ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: var(--main-font);
     background-color: var(--bg-body);
     color: var(--text-main);
-}
+} 
 
 /* Application globale des couleurs sur TOUS les textes */
-p, h2, h3, h4, h5, h6, li, a, label {
+h2, h3, h4, h5, h6, li, a, label {
     color: var(--text-main);
     transition: color 0.3s ease;
-}
-
-/* Application des cartes & conteneurs */
-.card, .box, section, article {
-    background-color: var(--bg-white);
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
-    transition: var(--transition);
 }
 
 /* ==========================================================================
@@ -117,7 +110,7 @@ p, h2, h3, h4, h5, h6, li, a, label {
 }
 
 .logo span {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 /* Hamburger Icon */
@@ -180,35 +173,40 @@ p, h2, h3, h4, h5, h6, li, a, label {
     font-weight: 500;
     transition: all 0.3s ease;
     text-decoration: none;
-    border: 5px;
+    color: var(--couleur-texte-principal);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+
+    
 }
 
 .btn-connexion:hover {
     border-color: transparent !important;
     transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(37, 99, 235, 0.4) !important;
-    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #60a5fa 100%) !important;
+    background: linear-gradient(135deg, var(--couleur-accent), #ff6b6b);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); /* Ombre colorée moderne */
 }
 
 /* --- Bouton Inscription (Style Dégradé Lumineux) --- */
 .btn-inscription {
-    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #60a5fa 100%) !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(37, 99, 235, 0.4) !important;
+    background: linear-gradient(135deg, var(--couleur-accent), #ff6b6b);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); /* Ombre colorée moderne */
+    transition: transform 0.2s, box-shadow 0.2s;
     border: none;
     padding: 8px 16px;
     color: #fff !important;
     font-weight: 600;
     transition: all 0.3s ease;
     text-decoration: none;
-    border: 2px;
+    border-radius: 20px;
 }
 
 .btn-inscription:hover {
     color:var(--primary-talent-color) !important;
     background: transparent !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(37, 99, 235, 0.4) !important;
-    transform: translateY(-1px);
     filter: brightness(1.1);
+    transform: translateY(-2px); /* Légère élévation */
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
     
 }
 
@@ -361,7 +359,7 @@ p, h2, h3, h4, h5, h6, li, a, label {
     left: 0;
     width: 0%;
     height: 3px;
-    background: var(--gradient-color);
+    background: linear-gradient(135deg, var(--couleur-accent), #ff6b6b);
     border-radius: 4px;
     transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -378,15 +376,14 @@ p, h2, h3, h4, h5, h6, li, a, label {
 
 /* 2. STYLE DU LIEN ACTIF (Page en cours) */
 .nav-link.active {
-    color: var(--primary-color) !important;
+    color: var(--couleur-accent-hover) !important;
     font-weight: 600;
 }
 
 .nav-link.active::after {
     width: 100%;
-    background: var(--gradient-color);
-    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.4); /* Effet lumineux sous le lien actif */
-}
+    background: linear-gradient(135deg, var(--couleur-accent), #ff6b6b);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); /* Ombre colorée moderne */}
 
 /* ==========================================================================
    ADAPTATION MOBILE & TABLETTE (< 1200px)
@@ -511,7 +508,7 @@ header.scrolled {
     padding: 2rem;
     color: var(--color, #ffffff);
     /* background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), url(../images/imagess.jpg) !important; */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/pexels-\(10\).jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.849)), url(../images/pex-\(1\).jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -549,26 +546,27 @@ header.scrolled {
     border: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 1.5rem;
     animation: fadeInUp 1.4s ease-out forwards;
+    cursor: pointer;
 }
 
 /* Correction de votre classe "bnt" en "btn" */
-.btn {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 1rem 2.5rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: var(--radius);
-    transition: var(--transition); /* Transition interactive [2] */
-    animation: fadeInUp 1.6s ease-out forwards;
-}
-
+/* Effet au survol du bouton Inscription */
 .btn:hover {
     transform: scale(1.05) translateY(-5px); /* Effet hover [10, 11] */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(37, 99, 235, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+}
+.btn {
+    background: linear-gradient(135deg, var(--couleur-accent), #ff6b6b);
+    color: #ffffff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); /* Ombre colorée moderne */
+    transition: transform 0.2s, box-shadow 0.2s;
 
 }
+
 /* --- SECTION CHIFFRES CLÉS (GRID) --- */
 #chiffres-cles {
     display: grid; /* Utilisation obligatoire de CSS Grid [1] */
@@ -578,6 +576,8 @@ header.scrolled {
     max-width: 1200px;
     margin: 4rem auto;
     padding: 0 2rem;
+    border: none;
+    background: none;
 }
 
 .chiffre-item {
@@ -588,6 +588,7 @@ header.scrolled {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Ombre légère pour le relief [6] */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'interaction [7] */
     border: 1px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
 }
 
 /* Effet interactif au survol demandé par les modèles de design [8] */
@@ -631,8 +632,19 @@ header.scrolled {
         "detail1 detail2"
         "detail3 detail3";
     gap: 2.5rem;
+    color: var(--primary-color);
 }
+.pourquoi-content p{
+    color: white;
+    font-weight:600;
+    margin: 0 10px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    /* Animation d'apparition au chargement [3] */
+    animation: fadeInUp 1s ease-out forwards;
+    
 
+}
 #pourquoi h2 {
     grid-area: title;
     text-align: center;
@@ -643,12 +655,34 @@ header.scrolled {
 }
 
 /* --- BLOCS DE DÉTAILS --- */
-.pourquoi-details1, .pourquoi-details2, .pourquoi-details3 {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+.pourquoi-details1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.849)),  url(../images/img0-\(6\).jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 20px 20px;
+    height: 100%;
+    cursor: pointer;
     transition: var(--transition);
+}
+.pourquoi-details2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.849)),  url(../images/pexels-\(1\).jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 20px 20px;
+    height: 100%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.pourquoi-details3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.849)),  url(../images/img0-\(7\).jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 20px 20px;
+    height: 100%;
+    cursor: pointer;
 }
 
 .pourquoi-details1 { grid-area: detail1; }
@@ -729,50 +763,168 @@ header.scrolled {
     border-radius: 2px;
 }
 
-/* --- GRILLE DES CARTES (GRID) --- */
-.temoignages-container {
-    display: grid; /* Utilisation de CSS Grid obligatoire */
-    /* auto-fit + minmax : gère la responsivité sans media queries complexes */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Fond global de la section */
+.testimonials-section {
+  padding: 80px 20px;
+  color: #ffffff;
+  overflow: hidden;
 }
 
-/* --- STYLE DE L'ITEM (CARTE) --- */
-.temoignage-item {
-    background: var(--bg-light, #f8f9fa);
-    padding: 2.5rem;
-    border-radius: var(--radius, 15px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease; /* Transition sur élément interactif */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-left: 5px solid var(--accent-color, #e94560); /* Accentuation visuelle */
+.testi-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Effet Hover (Ombre + Translation) exigé */
-.temoignage-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-    background: white;
+/* --- EN-TÊTE --- */
+.testi-header {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-.temoignage-item p {
-    font-style: italic; /* Style classique pour une citation */
-    color: var(--text-color, #333333);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+/* Le petit badge "Avis clients" */
+.testi-badge {
+  display: inline-block;
+  background-color: rgba(56, 189, 248, 0.1); /* Fond bleu transparent */
+  color: #38bdf8;                            /* Texte bleu fluo */
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 
+
+/* --- CARROUSEL SCROLL-SNAP (SANS JS) --- */
+.testi-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;                  /* Permet le défilement horizontal */
+  scroll-snap-type: x mandatory;     /* Magnétisme sur les cartes */
+  padding-bottom: 40px;              /* Espace pour l'ombre au survol */
+  scrollbar-width: none;             /* Masque la barre (Firefox) */
+  -ms-overflow-style: none;          /* Masque la barre (IE) */
+}
+
+/* Masque la barre de défilement (Chrome, Safari) */
+.testi-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- CARTES AVIS --- */
+.testi-card {
+  flex: 0 0 calc(33.333% - 16px);    /* Affiche 3 cartes par défaut */
+  min-width: 320px;                  /* Largeur minimum de la carte */
+  background-color: #161b22;         /* Fond gris très foncé */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Bordure ultra fine */
+  border-radius: 20px;
+  padding: 40px 30px;
+  position: relative;
+  scroll-snap-align: center;         /* Magnétisme au centre */
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol de la carte */
+.testi-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Guillemet géant en fond (Filigrane) */
+.quote-bg {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 6rem;
+  color: rgba(255, 255, 255, 0.03); /* Presque invisible */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Étoiles dorées */
+.stars {
+  color: #fbbf24;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.star-empty {
+  color: #475569; /* Couleur pour l'étoile vide */
+}
+
+/* Texte du témoignage */
+.testi-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  font-style: italic;
+  margin: 0 0 30px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- AUTEUR --- */
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.testi-author img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #38bdf8; /* Cercle bleu autour de l'image */
+}
+
+.author-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.author-info span {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* =========================================================
+   RESPONSIVE (TABLETTES & MOBILES)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .testi-card {
+    flex: 0 0 calc(50% - 12px); /* Affiche 2 cartes sur tablette */
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 60px 16px;
+  }
+  
+  .testi-header h2 {
+    font-size: 2rem;
+  }
+  
+  .testi-card {
+    flex: 0 0 85%; /* La carte prend 85% de l'écran, laissant entrevoir la suivante */
+  }
+}
 /* Style de l'auteur */
-.temoignage-item h4 {
+.testi-header h2 {
     font-family: 'Montserrat', sans-serif;
     color: var(--primary-color, #1a1a2e);
     font-size: 0.95rem;
-    font-weight: 700;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -926,10 +1078,56 @@ header.scrolled {
     grid-template-columns: repeat(2, 1fr); /* Grille 2x2 demandée [12] */
     gap: 2.5rem;
     padding: 2rem 0;
-}
 
-.thema-card {
-    background: var(--bg-white);
+}
+.thema-card h3, p{
+    color: white;
+}
+.thema-card1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.849)),  url(../images/pexels-\(3\).jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    cursor: pointer;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-bottom: 4px solid var(--accent-color);
+    transition: var(--transition);
+}
+.thema-card2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.849)),  url(../images/pexels-\(1\).jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    cursor: pointer;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-bottom: 4px solid var(--accent-color);
+    transition: var(--transition);
+}
+.thema-card3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.849)),  url(../images/pexels-\(7\).jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    cursor: pointer;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-bottom: 4px solid var(--accent-color);
+    transition: var(--transition);
+}
+.thema-card4 {
+    background: linear-gradient(rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.849)),  url(../images/pex-\(1\).jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    cursor: pointer;
     padding: 3rem;
     border-radius: 20px;
     text-align: center;
@@ -986,10 +1184,45 @@ header.scrolled {
     font-weight: 500;
 }
 
-/* card image */
+/* INTERVENANTS*/
+
+
+
+/* --- STYLE DES BOUTONS --- */
+.filter-buttons{
+    display: flex;             
+    justify-content: center;   
+    align-items: center;       
+    flex-wrap: wrap;           
+    gap: 1.5rem;               
+    margin: 3rem auto;         
+    width: 100%;
+}
+.btn-filter {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 50px; /* Style épuré 2026 */
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition); /* Transition obligatoire [2] */
+}
+
+/* État Hover [4] */
+.btn-filter:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* État Actif (Mis en évidence) [1] */
+.btn-filter.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
 .speakers-section {
     padding: clamp(3rem, 8vw, 6rem) 1rem;
-    background-color: #f8f9fa;
 }
 
 .speakers-container {
@@ -1012,6 +1245,7 @@ header.scrolled {
 }
 .card{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background: white;
   transition: 0.3s;
   width: 350px;
   border-radius: 5px;
@@ -1045,6 +1279,7 @@ header.scrolled {
 .country {
     font-size: 0.85rem;
     margin-bottom: 10px;
+    color: #333;
 }
 .btn-speaker {
     display: inline-block;
@@ -1267,6 +1502,210 @@ input:focus, select:focus, textarea:focus {
     display: block;
     filter: grayscale(20%);
 }
+
+
+
+
+
+
+/* Conteneur parent centré sur la page */
+.connexion-section {
+background: none;
+  width: 100%;
+  margin: 100px auto;             /* Centre horizontalement */
+  border: none;               /* AUCUNE BORDURE */
+  border-radius: 20px;
+  padding: 50px 60px;         /* Espace interne confortable pour un grand bloc */
+  box-sizing: border-box;
+}
+
+/* Titre principal en noir */
+.connexion-section h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-color);            /* Noir */
+  margin: 0 0 10px 0;
+  text-align: center;         /* Centré */
+}
+
+/* Description en noir / anthracite */
+.connexion-section > p {
+  color: #1e293b;            /* Noir adouci */
+  font-size: 1rem;
+  margin: 0 0 32px 0;
+  text-align: center;         /* Centré */
+}
+
+/* Alignement du formulaire à l'intérieur du bloc 1100px */
+.connexion-section form {
+  max-width: 500px;           /* Garde les champs à une largeur lisible */
+  margin: 0 auto;             /* Centre le formulaire dans les 1100px */
+}
+
+/* Espacement des blocs de saisie */
+.contact1, .contact2 {
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Libellés (Labels) en noir */
+.form-label {
+  color: var(--primary-color);            /* Noir */
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+/* Champs de texte (Inputs) */
+.form-control {
+  background-color: #f1f5f9;
+  border: none;               /* AUCUNE BORDURE */
+  border-radius: 12px;
+  color: var(--primary-color);            /* Texte tapé en noir */
+  padding: 14px 18px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.form-control::placeholder {
+  color: #94a3b8;
+}
+
+.form-control:focus {
+  outline: none;
+  background-color: #e2e8f0;
+}
+
+/* Bouton principal */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff4d4d; /* Rouge dynamique */
+  border: none;                /* AUCUNE BORDURE */
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #e03e3e;
+  transform: translateY(-2px);
+}
+
+/* Messages d'erreur */
+.error-msg {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+}
+
+.text-danger {
+  color: #ef4444;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 600px) {
+  .connexion-section {
+    padding: 30px 20px;
+  }
+}
+
+.options-section {
+    margin: auto;
+    border: none;
+    text-align: center;
+    background: none;
+
+}
+.option1{
+    padding: 50px;
+}
+.option1 p{
+    padding: 20px;
+
+}
+.option2{
+    margin-bottom: 50px;
+}
+.option2 p {
+    padding: 20px;
+}
+.options-section .btns{
+    color: var(--primary-color);
+}
+.options-section .btns:hover{
+    color: #e03e3e;
+}
+
+
+
+.password-reset-section{
+background: none;
+  width: 100%;
+  margin: 100px auto;             /* Centre horizontalement */
+  border: none;               /* AUCUNE BORDURE */
+  border-radius: 20px;
+  padding: 50px 60px;         /* Espace interne confortable pour un grand bloc */
+  box-sizing: border-box;
+
+}
+
+/* Titre principal en noir */
+.password-reset-section h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-color);            /* Noir */
+  margin: 0 0 10px 0;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Description en noir / anthracite */
+.password-reset-section  p {
+    color: white;  
+    font-size: 1rem;
+    margin: 0 0 32px 0;
+    text-align: center;   
+    padding: 6px;      
+}
+
+/* Alignement du formulaire à l'intérieur du bloc 1100px */
+.password-reset-section form {
+  max-width: 500px;           
+  margin: 0 auto; 
+          
+}
+.form-obi label{
+    padding: auto;
+    margin: auto;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* footer */
 .social-media{
@@ -1587,5 +2026,34 @@ footer div ul li a{
         padding-top: 0;
         border-top: none;
         gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .social-icones {
+        gap: 1rem; /* Réduit l'espace sur tablette */
+    }
+    .social-link img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* 2. MOBILE (375px) */
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 2rem 1rem;
+    }
+    
+    .social-icones {
+        display: grid; /* Passage en grille sur petit mobile pour l'alignement [11] */
+        grid-template-columns: repeat(4, 1fr); /* 4 icônes par ligne */
+        gap: 1rem;
+        justify-items: center;
+    }
+    
+    .social-header h4 {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
     }
 }
