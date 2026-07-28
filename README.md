@@ -47,7 +47,7 @@ Validation de Formulaire : Contrôle complet à la soumission avec messages d'er
 Bouton Retour en Haut : Apparition après 300px de défilement avec une remontée fluide
 .
 Lien GitHub Pages
-Le site est déployé et consultable en ligne à l'adresse suivante :
+Le site est déployé et consultable en ligne à l'adresse suivante : https://alsane57.github.io/DIOP-Alassane-AfriConnectSummit/
 Ressources Consultées
 MDN Web Docs : Référence pour HTML, CSS et JavaScript
 .
